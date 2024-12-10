@@ -10,6 +10,7 @@ const Dashboard = React.lazy(() => import('./pages/Dashboard'));
 const Calendar = React.lazy(() => import('./pages/Calendar'));
 const Challenges = React.lazy(() => import('./pages/Challenges'));
 const NewsFeed = React.lazy(() => import('./pages/NewsFeed'));
+const Profile = React.lazy(() => import('./pages/Profile'));
 
 // Layout components
 const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
@@ -80,6 +81,14 @@ const AppRoutes = () => {
               element={
                 <PrivateRoute>
                   <NewsFeed />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <PrivateRoute>
+                  <Profile />
                 </PrivateRoute>
               }
             />
